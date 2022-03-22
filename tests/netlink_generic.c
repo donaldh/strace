@@ -51,7 +51,7 @@ test_nlmsg_type(const int fd)
 
 	rc = sendto(fd, &req, sizeof(req), MSG_DONTWAIT, NULL, 0);
 	printf("sendto(%d, [{nlmsg_len=%u, nlmsg_type=nlctrl"
-	       ", nlmsg_flags=NLM_F_REQUEST|0x300, nlmsg_seq=0, nlmsg_pid=0}"
+	       ", nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=0, nlmsg_pid=0}"
 	       ", {cmd=CTRL_CMD_GETFAMILY, version=0}], %u"
 	       ", MSG_DONTWAIT, NULL, 0) = %s\n",
 	       fd, req.nlh.nlmsg_len,
@@ -84,7 +84,7 @@ test_sendmsg_nlmsg_type(const int fd)
         rc = sendmsg(fd, &msg, MSG_DONTWAIT);
         printf("sendmsg(%d, {msg_name=NULL, msg_namelen=0"
 	       ", msg_iov=[{iov_base=[{nlmsg_len=%u, nlmsg_type=nlctrl"
-	       ", nlmsg_flags=NLM_F_REQUEST|0x300, nlmsg_seq=0, nlmsg_pid=0}"
+	       ", nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=0, nlmsg_pid=0}"
 	       ", {cmd=CTRL_CMD_GETFAMILY, version=0}], iov_len=%u}], msg_iovlen=1"
 	       ", msg_controllen=0, msg_flags=0}, MSG_DONTWAIT) = %s\n",
 	       fd, req.nlh.nlmsg_len, (unsigned int) iov[0].iov_len,
@@ -109,7 +109,7 @@ test_missing_type(const int fd)
 
 	rc = sendto(fd, &req, sizeof(req), MSG_DONTWAIT, NULL, 0);
 	printf("sendto(%d, [{nlmsg_len=%u, nlmsg_type=0xffff /* GENERIC_FAMILY_??? */"
-	       ", nlmsg_flags=NLM_F_REQUEST|0x300, nlmsg_seq=0, nlmsg_pid=0}"
+	       ", nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=0, nlmsg_pid=0}"
 	       ", {cmd=0x3 /* ??? */, version=1}], %u"
 	       ", MSG_DONTWAIT, NULL, 0) = %s\n",
 	       fd, req.nlh.nlmsg_len,
@@ -138,7 +138,7 @@ test_missing_type(const int fd)
 
 	rc = sendto(fd, &reqnla, sizeof(reqnla), MSG_DONTWAIT, NULL, 0);
 	printf("sendto(%d, [{nlmsg_len=%u, nlmsg_type=0xffff /* GENERIC_FAMILY_??? */"
-	       ", nlmsg_flags=NLM_F_REQUEST|0x300, nlmsg_seq=0, nlmsg_pid=0}"
+	       ", nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=0, nlmsg_pid=0}"
 	       ", {cmd=0x3 /* ??? */, version=1"
 	       ", data=\"\\x08\\x00\\x0a\\x00\\x00\\x00\\x00\\x00\"}]"
 	       ", %u, MSG_DONTWAIT, NULL, 0) = %s\n",
