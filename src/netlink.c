@@ -596,7 +596,8 @@ static const netlink_decoder_t netlink_decoders[] = {
 	[NETLINK_NETFILTER] = decode_netlink_netfilter,
 	[NETLINK_ROUTE] = decode_netlink_route,
 	[NETLINK_SELINUX] = decode_netlink_selinux,
-	[NETLINK_SOCK_DIAG] = decode_netlink_sock_diag
+	[NETLINK_SOCK_DIAG] = decode_netlink_sock_diag,
+	[NETLINK_GENERIC] = decode_netlink_generic
 };
 
 static void
