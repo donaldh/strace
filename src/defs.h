@@ -1469,6 +1469,7 @@ DECL_NETLINK(netfilter);
 DECL_NETLINK(route);
 DECL_NETLINK(selinux);
 DECL_NETLINK(sock_diag);
+DECL_NETLINK(generic);
 
 extern void
 decode_netlink_kobject_uevent(struct tcb *, kernel_ulong_t addr,
