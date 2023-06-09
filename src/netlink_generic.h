@@ -17,5 +17,7 @@ genl_decode_name(struct tcb *tcp,			\
 /* End of DECL_NETLINK_GENERIC_DECODER definition. */
 
 extern DECL_NETLINK_GENERIC_DECODER(decode_nlctrl_msg);
+extern DECL_NETLINK_GENERIC_DECODER(decode_ovs_datapath_msg);
+extern DECL_NETLINK_GENERIC_DECODER(decode_ovs_vport_msg);
 
 #endif /* !STRACE_NETLINK_GENERIC_H */

@@ -243,6 +243,8 @@ libstrace_a_SOURCES =	\
 	open.c		\
 	open_tree.c	\
 	or1k_atomic.c	\
+	ovs_datapath.c	\
+	ovs_vport.c	\
 	pathtrace.c	\
 	perf.c		\
 	perf_event_struct.h \

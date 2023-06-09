@@ -176,6 +176,8 @@ struct genl_decoder_entry_t {
 	netlink_generic_decoder_t decoder;
 } genl_decoders[] = {
 	{ "nlctrl", decode_nlctrl_msg },
+	{ "ovs_datapath", decode_ovs_datapath_msg },
+	{ "ovs_vport", decode_ovs_vport_msg },
 };
 
 static netlink_generic_decoder_t
@@ -211,8 +213,8 @@ decode_netlink_generic(struct tcb *const tcp,
 		if (decoder) {
 			decoder(tcp, &genl, addr + offset, len - offset);
                 } else {
-			decode_genl_family(tcp, genl.cmd, genl.version, addr + offset,
-                                           len - offset);
+			decode_genl_family(tcp, genl.cmd, genl.version,
+					   addr + offset, len - offset);
                 }
         }
 
