@@ -177,6 +177,7 @@ struct genl_decoder_entry_t {
 } genl_decoders[] = {
 	{ "nlctrl", decode_nlctrl_msg },
 	{ "ovs_datapath", decode_ovs_datapath_msg },
+	{ "ovs_flow", decode_ovs_flow_msg },
 	{ "ovs_vport", decode_ovs_vport_msg },
 };
 

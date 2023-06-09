@@ -244,6 +244,7 @@ libstrace_a_SOURCES =	\
 	open_tree.c	\
 	or1k_atomic.c	\
 	ovs_datapath.c	\
+	ovs_flow.c	\
 	ovs_vport.c	\
 	pathtrace.c	\
 	perf.c		\

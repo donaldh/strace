@@ -1,0 +1,4 @@
+#unconditional
+#value_indexed
+OVS_SAMPLE_ATTR_PROBABILITY
+OVS_SAMPLE_ATTR_ACTIONS
